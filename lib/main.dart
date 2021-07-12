@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './transaction.dart';
 
@@ -21,8 +22,10 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final List<Transaction> transactions = [
-    Transaction(id: 'T1', title: 'New shoes', amount: 182.00, date: DateTime.now()),
-    Transaction(id: 'T2', title: 'New phone', amount: 900.00, date: DateTime.now()),
+    Transaction(
+        id: 'T1', title: 'New shoes', amount: 182.00, date: DateTime.now()),
+    Transaction(
+        id: 'T2', title: 'New phone', amount: 900.00, date: DateTime.now()),
   ];
 
   @override
@@ -80,7 +83,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '${tx.date.day.toString()}/${tx.date.month.toString()}/${tx.date.year.toString()}',
+                          DateFormat.yMMMd().format(tx.date),
                           style: TextStyle(
                             color: Colors.grey,
                           ),
