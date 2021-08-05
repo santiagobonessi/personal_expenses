@@ -58,10 +58,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool _showChart = false;
 
-  final List<Transaction> _userTransactions = [
-    // Transaction(id: 'T1', title: 'New shoes', amount: 182.00, date: DateTime.now()),
-    // Transaction(id: 'T2', title: 'New phone', amount: 900.00, date: DateTime.now()),
-  ];
+  final List<Transaction> _userTransactions = [];
 
   List<Transaction> get _recentTransactions {
     return _userTransactions.where((tx) {
@@ -166,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).accentColor,
         onPressed: () => _startAddNewTransaction(context),
       ),
     );
